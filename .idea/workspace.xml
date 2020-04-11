@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="3e580ba3-add3-4012-a557-2fe613477d9f" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Kotlin Class" />
+        <option value="Kotlin File" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1aKhdS3cO6wtvAt8bFDZIe6HMz9" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="util" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="MainKt" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
+      <module name="obfuscator.main" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" value="MainKt" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Kotlin.MainKt" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3e580ba3-add3-4012-a557-2fe613477d9f" name="Default Changelist" comment="" />
+      <created>1586490279278</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1586490279278</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="440" y="159" key="#Project_Structure" timestamp="1586490643113">
+      <screen x="0" y="23" width="1680" height="942" />
+    </state>
+    <state x="440" y="159" key="#Project_Structure/0.23.1680.942@0.23.1680.942" timestamp="1586490643113" />
+    <state x="622" y="217" key="#com.intellij.ide.util.MemberChooser" timestamp="1586596110190">
+      <screen x="0" y="23" width="1680" height="942" />
+    </state>
+    <state x="622" y="217" key="#com.intellij.ide.util.MemberChooser/1680.23.2560.1057/0.23.1680.942@0.23.1680.942" timestamp="1586596110190" />
+    <state x="606" y="153" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog" timestamp="1586617500367">
+      <screen x="0" y="23" width="1680" height="942" />
+    </state>
+    <state x="606" y="153" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog/0.23.1680.942@0.23.1680.942" timestamp="1586617500367" />
+    <state width="1638" height="184" key="GridCell.Tab.0.bottom" timestamp="1586617460594">
+      <screen x="0" y="23" width="1680" height="942" />
+    </state>
+    <state width="1638" height="184" key="GridCell.Tab.0.bottom/0.23.1680.942@0.23.1680.942" timestamp="1586617460594" />
+    <state width="1638" height="173" key="GridCell.Tab.0.bottom/1680.23.2560.1057/0.23.1680.942@0.23.1680.942" timestamp="1586600104982" />
+    <state width="1638" height="184" key="GridCell.Tab.0.center" timestamp="1586617460592">
+      <screen x="0" y="23" width="1680" height="942" />
+    </state>
+    <state width="1638" height="184" key="GridCell.Tab.0.center/0.23.1680.942@0.23.1680.942" timestamp="1586617460592" />
+    <state width="1638" height="173" key="GridCell.Tab.0.center/1680.23.2560.1057/0.23.1680.942@0.23.1680.942" timestamp="1586600104981" />
+    <state width="1638" height="184" key="GridCell.Tab.0.left" timestamp="1586617460591">
+      <screen x="0" y="23" width="1680" height="942" />
+    </state>
+    <state width="1638" height="184" key="GridCell.Tab.0.left/0.23.1680.942@0.23.1680.942" timestamp="1586617460591" />
+    <state width="1638" height="173" key="GridCell.Tab.0.left/1680.23.2560.1057/0.23.1680.942@0.23.1680.942" timestamp="1586600104980" />
+    <state width="1638" height="184" key="GridCell.Tab.0.right" timestamp="1586617460593">
+      <screen x="0" y="23" width="1680" height="942" />
+    </state>
+    <state width="1638" height="184" key="GridCell.Tab.0.right/0.23.1680.942@0.23.1680.942" timestamp="1586617460593" />
+    <state width="1638" height="173" key="GridCell.Tab.0.right/1680.23.2560.1057/0.23.1680.942@0.23.1680.942" timestamp="1586600104981" />
+    <state x="619" y="228" key="org.jetbrains.kotlin.idea.testIntegration.KotlinCreateTestDialog" timestamp="1586614244552">
+      <screen x="0" y="23" width="1680" height="942" />
+    </state>
+    <state x="619" y="228" key="org.jetbrains.kotlin.idea.testIntegration.KotlinCreateTestDialog/0.23.1680.942@0.23.1680.942" timestamp="1586614244552" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.javaparser/javaparser-core/3.15.17/51e2e979c7d248c959f03a45c1862f248c8a4c6e/javaparser-core-3.15.17-sources.jar!/com/github/javaparser/ast/nodeTypes/NodeWithRange.java</url>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

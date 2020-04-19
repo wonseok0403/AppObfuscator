@@ -17,10 +17,15 @@
       <list>
         <option value="Kotlin Class" />
         <option value="Kotlin File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1aKhdS3cO6wtvAt8bFDZIe6HMz9" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -28,6 +33,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -83,30 +89,39 @@
       <screen x="0" y="23" width="1680" height="942" />
     </state>
     <state x="606" y="153" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog/0.23.1680.942@0.23.1680.942" timestamp="1586617500367" />
-    <state width="1638" height="184" key="GridCell.Tab.0.bottom" timestamp="1586617460594">
+    <state width="1638" height="150" key="GridCell.Tab.0.bottom" timestamp="1587297728312">
       <screen x="0" y="23" width="1680" height="942" />
     </state>
-    <state width="1638" height="184" key="GridCell.Tab.0.bottom/0.23.1680.942@0.23.1680.942" timestamp="1586617460594" />
-    <state width="1638" height="173" key="GridCell.Tab.0.bottom/1680.23.2560.1057/0.23.1680.942@0.23.1680.942" timestamp="1586600104982" />
-    <state width="1638" height="184" key="GridCell.Tab.0.center" timestamp="1586617460592">
+    <state width="1638" height="150" key="GridCell.Tab.0.bottom/0.23.1680.942@0.23.1680.942" timestamp="1587297728312" />
+    <state width="1638" height="150" key="GridCell.Tab.0.bottom/1680.23.2560.1057/0.23.1680.942@0.23.1680.942" timestamp="1587135448911" />
+    <state width="1638" height="150" key="GridCell.Tab.0.center" timestamp="1587297728312">
       <screen x="0" y="23" width="1680" height="942" />
     </state>
-    <state width="1638" height="184" key="GridCell.Tab.0.center/0.23.1680.942@0.23.1680.942" timestamp="1586617460592" />
-    <state width="1638" height="173" key="GridCell.Tab.0.center/1680.23.2560.1057/0.23.1680.942@0.23.1680.942" timestamp="1586600104981" />
-    <state width="1638" height="184" key="GridCell.Tab.0.left" timestamp="1586617460591">
+    <state width="1638" height="150" key="GridCell.Tab.0.center/0.23.1680.942@0.23.1680.942" timestamp="1587297728312" />
+    <state width="1638" height="150" key="GridCell.Tab.0.center/1680.23.2560.1057/0.23.1680.942@0.23.1680.942" timestamp="1587135448910" />
+    <state width="1638" height="150" key="GridCell.Tab.0.left" timestamp="1587297728311">
       <screen x="0" y="23" width="1680" height="942" />
     </state>
-    <state width="1638" height="184" key="GridCell.Tab.0.left/0.23.1680.942@0.23.1680.942" timestamp="1586617460591" />
-    <state width="1638" height="173" key="GridCell.Tab.0.left/1680.23.2560.1057/0.23.1680.942@0.23.1680.942" timestamp="1586600104980" />
-    <state width="1638" height="184" key="GridCell.Tab.0.right" timestamp="1586617460593">
+    <state width="1638" height="150" key="GridCell.Tab.0.left/0.23.1680.942@0.23.1680.942" timestamp="1587297728311" />
+    <state width="1638" height="150" key="GridCell.Tab.0.left/1680.23.2560.1057/0.23.1680.942@0.23.1680.942" timestamp="1587135448909" />
+    <state width="1638" height="150" key="GridCell.Tab.0.right" timestamp="1587297728312">
       <screen x="0" y="23" width="1680" height="942" />
     </state>
-    <state width="1638" height="184" key="GridCell.Tab.0.right/0.23.1680.942@0.23.1680.942" timestamp="1586617460593" />
-    <state width="1638" height="173" key="GridCell.Tab.0.right/1680.23.2560.1057/0.23.1680.942@0.23.1680.942" timestamp="1586600104981" />
+    <state width="1638" height="150" key="GridCell.Tab.0.right/0.23.1680.942@0.23.1680.942" timestamp="1587297728312" />
+    <state width="1638" height="150" key="GridCell.Tab.0.right/1680.23.2560.1057/0.23.1680.942@0.23.1680.942" timestamp="1587135448911" />
+    <state x="517" y="326" key="com.intellij.ide.util.TipDialog" timestamp="1587288355868">
+      <screen x="0" y="23" width="1680" height="942" />
+    </state>
+    <state x="517" y="326" key="com.intellij.ide.util.TipDialog/0.23.1680.942@0.23.1680.942" timestamp="1587288355868" />
+    <state x="517" y="326" key="com.intellij.ide.util.TipDialog/1680.23.2560.1057/0.23.1680.942@0.23.1680.942" timestamp="1587130133930" />
     <state x="619" y="228" key="org.jetbrains.kotlin.idea.testIntegration.KotlinCreateTestDialog" timestamp="1586614244552">
       <screen x="0" y="23" width="1680" height="942" />
     </state>
     <state x="619" y="228" key="org.jetbrains.kotlin.idea.testIntegration.KotlinCreateTestDialog/0.23.1680.942@0.23.1680.942" timestamp="1586614244552" />
+    <state x="505" y="229" width="670" height="676" key="search.everywhere.popup" timestamp="1587134509023">
+      <screen x="0" y="23" width="1680" height="942" />
+    </state>
+    <state x="505" y="229" width="670" height="676" key="search.everywhere.popup/1680.23.2560.1057/0.23.1680.942@0.23.1680.942" timestamp="1587134509023" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -4,14 +4,7 @@ import com.github.javaparser.ast.CompilationUnit
 import com.github.javaparser.ast.body.VariableDeclarator
 import com.github.javaparser.ast.expr.AssignExpr
 
-class VariableUtil(private var cu: CompilationUnit) {
-    fun getVariable(): List<VariableDeclarator> {
-        val list = mutableListOf<VariableDeclarator>()
-        cu.findAll(VariableDeclarator::class.java){
-            list.add(it)
-        }
-        return list
-    }
+class VariableUtil(override var cu: CompilationUnit) : BaseUtil<VariableDeclarator>(VariableDeclarator::class.java){
 
     fun modifyValue(varName: String, changeValue: String) {
         looper(varName) { it.setInitializer(changeValue) }
@@ -21,15 +14,7 @@ class VariableUtil(private var cu: CompilationUnit) {
         looper(varName) { it.setName(changeValue) }
     }
 
-    private fun looper(varName: String, block: ((VariableDeclarator) -> Unit)) {
-        cu.findAll(VariableDeclarator::class.java).filter {
-            if (varName.isNullOrEmpty()) {
-                true
-            } else {
-                it.name.toString() == varName
-            }
-        }.forEach {
-            block(it)
-        }
+    override fun isNameSame(node: VariableDeclarator, comp: String): Boolean {
+        return node.name.toString() == comp
     }
 }

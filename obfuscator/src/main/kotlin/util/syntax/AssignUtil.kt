@@ -5,12 +5,7 @@ import com.github.javaparser.ast.CompilationUnit
 import com.github.javaparser.ast.expr.AssignExpr
 import com.github.javaparser.ast.expr.Expression
 
-class AssignUtil(private var cu: CompilationUnit) {
-    fun getAssign(): List<AssignExpr> {
-        val list = mutableListOf<AssignExpr>()
-        looper(null){list.add(it)}
-        return list
-    }
+class AssignUtil(override var cu: CompilationUnit) : BaseUtil<AssignExpr>(AssignExpr::class.java) {
 
     fun modifyAssignName(assignName: String?, changeValue: String) {
         val t = StaticJavaParser.parseExpression<Expression>(changeValue)
@@ -22,15 +17,7 @@ class AssignUtil(private var cu: CompilationUnit) {
         looper(assignName) { it.value = t }
     }
 
-    private fun looper(assignName: String?, block: (AssignExpr) -> Unit) {
-        cu.findAll(AssignExpr::class.java).filter {
-            if (assignName.isNullOrEmpty()) {
-                true
-            } else {
-                it.target.toString() == assignName
-            }
-        }.forEach {
-            block(it)
-        }
+    override fun isNameSame(node: AssignExpr, comp: String): Boolean {
+        return node.target.toString() == comp
     }
 }

@@ -7,14 +7,14 @@ import com.github.javaparser.ast.expr.Expression
 
 class AssignUtil(override var cu: CompilationUnit) : BaseUtil<AssignExpr>(AssignExpr::class.java) {
 
-    fun modifyAssignName(assignName: String?, changeValue: String) {
-        val t = StaticJavaParser.parseExpression<Expression>(changeValue)
-        looper(assignName) { it.target = t }
+    fun setName(name: String?, value: String) {
+        val t = StaticJavaParser.parseExpression<Expression>(value)
+        looper(name) { it.target = t }
     }
 
-    fun modifyAssignValue(assignName: String?, changeValue: String) {
-        val t = StaticJavaParser.parseExpression<Expression>(changeValue)
-        looper(assignName) { it.value = t }
+    fun setValue(name: String?, value: String) {
+        val t = StaticJavaParser.parseExpression<Expression>(value)
+        looper(name) { it.value = t }
     }
 
     override fun isNameSame(node: AssignExpr, comp: String): Boolean {

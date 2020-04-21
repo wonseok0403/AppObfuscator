@@ -2,9 +2,6 @@ package com.ono.test_app
 
 import android.content.SharedPreferences
 
-/**
- * A [android.content.SharedPreferences] wrapper that helps easy reading/writing values.
- */
 class SecureSharedPreferences(private val sharedPref: SharedPreferences) {
     fun contains(key: String) = sharedPref.contains(key)
 
@@ -16,9 +13,6 @@ class SecureSharedPreferences(private val sharedPref: SharedPreferences) {
 
     fun get(key: String, defaultValue: String): String = getInternal(key, defaultValue)
 
-    /**
-     * Client codes must handle ClassCastException by their own at the call site if happens.
-     */
     private fun <T : Any> getInternal(key: String, defaultValue: T): T {
         val str = sharedPref.getString(key, "")
         if (str.isNullOrEmpty()) {
@@ -36,9 +30,6 @@ class SecureSharedPreferences(private val sharedPref: SharedPreferences) {
         } as T
     }
 
-    /**
-     * Due to the encryption layer limitations, input value must be shorter than [CipherHelper.KEY_LENGTH_BIT] bytes.
-     */
     fun put(key: String, value: Boolean) = putInternal(key, value)
 
     fun put(key: String, value: Int) = putInternal(key, value)

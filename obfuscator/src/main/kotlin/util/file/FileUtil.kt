@@ -1,6 +1,8 @@
 package util.file
 
 import java.io.File
+import java.nio.file.Files
+import java.nio.file.Path
 
 object FileUtil {
     private val filterFiles = listOf(
@@ -11,11 +13,11 @@ object FileUtil {
     )
 
     fun getAppFiles(name: String): File {
-        return File(getTestAppPath(name))
+        return File(getAppPath(name))
     }
 
-    fun getTestAppPath(name: String): String {
-        return joinDir(getRoot(), name)
+    fun getAppPath(name: String): String {
+        return joinDir(getRoot(), "$name/app/src")
     }
 
     fun getRoot(): String {
@@ -23,12 +25,20 @@ object FileUtil {
     }
 
     fun getJavaFiles(folder: File): List<File> {
+        return getFilesByCondition(folder) { it.name.endsWith(".java") && !filterFiles.contains(it.name) }
+    }
+
+    fun getManifestXML(folder: File): File{
+        return getFilesByCondition(folder) { it.name == "AndroidManifest.xml" }[0]
+    }
+
+    private fun getFilesByCondition(folder: File, condition: ((File) -> Boolean)): List<File> {
         val files = mutableListOf<File>()
         for (fileEntry in folder.listFiles()) {
             if (fileEntry.isDirectory) {
-                files += getJavaFiles(fileEntry)
+                files += getFilesByCondition(fileEntry, condition)
             } else {
-                if (fileEntry.name.endsWith(".java") && !filterFiles.contains(fileEntry.name)) {
+                if (condition(fileEntry)) {
                     files.add(fileEntry)
                 }
             }
@@ -48,5 +58,13 @@ object FileUtil {
         return if (main.last() == '/' && sub.first() == '/') main.dropLast(1) + sub
         else if (main.last() == '/' || sub.first() == '/') main + sub
         else "$main/$sub"
+    }
+
+    fun changeFileName(target : File, change : String){
+        changeFileName(target.toPath(), change)
+    }
+
+    fun changeFileName(target : Path, change : String){
+        Files.move(target,target.resolveSibling("$change.java"))
     }
 }

@@ -2,11 +2,16 @@ package obfuscator
 
 import cipher.CipherHelper.SHA256
 import com.github.javaparser.ast.CompilationUnit
+import com.github.javaparser.ast.body.Parameter
+import com.github.javaparser.ast.expr.*
 import util.file.CompilationUtil.saveCompilationUnit
 import util.file.FileUtil
 import util.file.FileUtil.changeFileName
 import util.file.XMLUtil
 import util.syntax.ClassUtil
+import util.syntax.NameUtil
+import util.syntax.ParameterUtil
+import util.syntax.VariableUtil
 import java.io.File
 
 class Obfuscator private constructor() : AbstractObfuscator() {
@@ -22,12 +27,16 @@ class Obfuscator private constructor() : AbstractObfuscator() {
         }
 
         override fun run() {
-            XMLUtil.obfuscateManifest(FileUtil.getManifestXML(folder))
-            javaFiles.forEach{
-                applyToClass(it)
+            applyToXML()
+            javaFiles.forEach {
                 applyToVariable(it)
-                applyToMethod(it)
+                //applyToMethod(it)
+                applyToClass(it)
             }
+        }
+
+        private fun applyToXML(){
+            XMLUtil.obfuscateManifest(FileUtil.getManifestXML(folder))
         }
 
         private fun applyToClass(file: File) {
@@ -53,17 +62,46 @@ class Obfuscator private constructor() : AbstractObfuscator() {
         }
 
         private fun applyToVariable(file: File) {
-//            val util = VariableUtil(cu)
-//            util.get().forEach{
-//                val name = it.name.toString()
-//                with(SHA256(name),{
-//                    util.setName(name, this!!)
-//                })
-//            }
+            val cu = parse(file)
+            VariableUtil(cu).also { util ->
+                util.get().forEach {
+                    val name = it.name.toString()
+                    println(name)
+                    with(SHA256(name), {
+                        util.setName(name, this!!)
+                    })
+                }
+            }
+            ParameterUtil(cu).also { util ->
+                util.get().forEach {
+                    val name = it.name.toString()
+                    if (name[0].isLowerCase()) {
+                        println(name)
+                        with(SHA256(name), {
+                            util.setName(name, this!!)
+                        })
+                    }
+                }
+            }
+            NameUtil(cu).also { util ->
+                util.get().forEach {
+
+                    val name = it.name.toString()
+
+                    if (name[0].isLowerCase()) {
+                        println(name)
+
+                        with(SHA256(name), {
+                            util.setName(name, this!!)
+                        })
+                    }
+                }
+            }
+
+            saveCompilationUnit(file, cu)
         }
 
         private fun applyToMethod(file: File) {
-
         }
     }
 

@@ -12,12 +12,16 @@ object FileUtil {
         "R.java"
     )
 
-    fun getAppFiles(name: String): File {
+    fun getMainFolder(name: String): File {
         return File(getAppPath(name))
     }
 
+    fun getPackageName(folder: File) : String?{
+        return XMLUtil.getPackageName(getManifestXML(folder))
+    }
+
     fun getAppPath(name: String): String {
-        return joinDir(getRoot(), "$name/app/src")
+        return joinDir(getRoot(), "$name/app/src/main")
     }
 
     fun getRoot(): String {

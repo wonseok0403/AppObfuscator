@@ -4,8 +4,7 @@ import com.github.javaparser.ast.CompilationUnit
 import com.github.javaparser.ast.body.VariableDeclarator
 import com.github.javaparser.ast.expr.AssignExpr
 
-//int a = 5;
-class VariableUtil(override var cu: CompilationUnit) : BaseUtil<VariableDeclarator>(VariableDeclarator::class.java){
+class VariableDeclUtil(override var cu: CompilationUnit) : BaseUtil<VariableDeclarator>(VariableDeclarator::class.java){
 
     fun setValue(name: String?, value: String) {
         looper(name) { it.setInitializer(value) }

@@ -1,4 +1,4 @@
-package cipher
+package util.cipher
 
 import java.math.BigInteger
 import java.security.MessageDigest
@@ -22,7 +22,6 @@ object CipherHelper{
                 break
             }
         }
-
         return toReturn
     }
 }

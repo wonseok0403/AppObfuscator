@@ -10,6 +10,7 @@ abstract class AbstractModifier : BaseModifier {
     protected val mainFolder by lazy { FileUtil.getMainFolder(targetAppName) }
     protected val codeFolder by lazy { File("${mainFolder}/java/${FileUtil.getPackageName(mainFolder)?.replace(".","/")}") }
     protected val javaFiles: List<File> by lazy { FileUtil.getJavaFiles(mainFolder) }
+    protected val imgFiles: List<File> by lazy{ FileUtil.getImageFiles(mainFolder) }
 
     protected fun parse(file : File) : CompilationUnit{
         return StaticJavaParser.parse(file)

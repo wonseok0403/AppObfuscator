@@ -32,6 +32,11 @@ object FileUtil {
         return getFilesByCondition(folder) { it.name.endsWith(".java") && !filterFiles.contains(it.name) }
     }
 
+    fun getImageFiles(folder: File): List<File> {
+        //jpg only
+        return getFilesByCondition(folder) { it.name.endsWith(".jpg") && !filterFiles.contains(it.name) }
+    }
+
     fun getManifestXML(folder: File): File{
         return getFilesByCondition(folder) { it.name == "AndroidManifest.xml" }[0]
     }

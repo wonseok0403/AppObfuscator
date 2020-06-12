@@ -10,7 +10,13 @@ import util.json.JsonFactory
 import util.syntax.ClassUtil
 import util.syntax.MethodDeclUtil
 import util.syntax.StringLiteralUtil
-import java.io.File
+import java.io.*
+import java.security.SecureRandom
+import javax.crypto.Cipher
+import javax.crypto.KeyGenerator
+import javax.crypto.SecretKey
+import javax.crypto.spec.SecretKeySpec
+
 
 class Encryptor private constructor() : AbstractModifier() {
     companion object {
@@ -35,10 +41,62 @@ class Encryptor private constructor() : AbstractModifier() {
                 jsonObject.save()
             }
         }
+        @Throws(Exception::class)
+        fun readFile(filePath: String): ByteArray {
+            val file = File(filePath)
+            val fileContents = file.readBytes()
+            val inputBuffer = BufferedInputStream(
+                FileInputStream(file)
+            )
+
+            inputBuffer.read(fileContents)
+            inputBuffer.close()
+
+            return fileContents
+        }
+        @Throws(Exception::class)
+        fun saveFile(fileData: ByteArray, path: String) {
+            val file = File(path)
+            val bos = BufferedOutputStream(FileOutputStream(file, false))
+            bos.write(fileData)
+            bos.flush()
+            bos.close()
+        }
+
+        @Throws(Exception::class)
+        fun generateSecretKey(): SecretKey? {
+            val secureRandom = SecureRandom()
+            val keyGenerator = KeyGenerator.getInstance("AES")
+            //generate a key with secure random
+            keyGenerator?.init(128, secureRandom)
+            return keyGenerator?.generateKey()
+        }
+
+        @Throws(Exception::class)
+        fun encryptImgs(yourKey: SecretKey, fileData: ByteArray): ByteArray {
+            val data = yourKey.getEncoded()
+            println(data.toString())
+            val skeySpec = SecretKeySpec(data, 0, data.size, "AES")
+            val cipher = Cipher.getInstance("AES")
+            cipher.init(Cipher.ENCRYPT_MODE,  yourKey)
+            return cipher.doFinal(fileData)
+        }
 
         override fun run() {
             javaFiles.forEach {
                 makeJson(it)
+            }
+
+            imgFiles.forEach{
+                //encryptImages
+                val secretKey = generateSecretKey()
+                val encryptedImg = secretKey?.let { it1 -> encryptImgs(it1, readFile(it.path)) }
+
+                if (encryptedImg != null) {
+                    val newFile =
+                        File(it.getParent(), "encrypted-img.jpg")
+                    saveFile(encryptedImg, newFile.path)
+                }
             }
         }
     }

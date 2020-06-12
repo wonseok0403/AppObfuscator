@@ -55,12 +55,18 @@ object FileUtil {
     }
 
     fun getForwardDir(dir: String): String {
-        return dir.split('/').dropLast(1).joinToString("/")
+//        return dir.split('/').dropLast(1).joinToString("/")
+
+        return dir.split('\\').dropLast(1).joinToString("\\")
     }
 
     fun joinDir(main: String, sub: String): String {
-        return if (main.last() == '/' && sub.first() == '/') main.dropLast(1) + sub
-        else if (main.last() == '/' || sub.first() == '/') main + sub
+//        return if (main.last() == '/' && sub.first() == '/') main.dropLast(1) + sub
+//        else if (main.last() == '/' || sub.first() == '/') main + sub
+
+        // Windows
+        return if (main.last() == '\\' && sub.first() == '\\') main.dropLast(1) + sub
+        else if (main.last() == '\\' || sub.first() == '\\') main + sub
         else "$main/$sub"
     }
 

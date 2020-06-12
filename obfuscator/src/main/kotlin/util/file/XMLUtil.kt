@@ -13,7 +13,7 @@ import javax.xml.transform.stream.StreamResult
 
 object XMLUtil {
     fun obfuscateActivityName(xml: File) {
-        val documentBuilder = DocumentBuilderFactory.newDefaultInstance().newDocumentBuilder()
+        val documentBuilder = DocumentBuilderFactory.newInstance().newDocumentBuilder()
         val document = documentBuilder.parse(xml)
         val activityList = document.getElementsByTagName("activity")
 
@@ -32,7 +32,7 @@ object XMLUtil {
     fun obfuscateApplicationName(xml: File) {
         injectApplicationName(xml)
 
-        val documentBuilder = DocumentBuilderFactory.newDefaultInstance().newDocumentBuilder()
+        val documentBuilder = DocumentBuilderFactory.newInstance().newDocumentBuilder()
         val document = documentBuilder.parse(xml)
         val activityList = document.getElementsByTagName("application")
 
@@ -49,7 +49,7 @@ object XMLUtil {
     }
 
     fun injectApplicationName(xml: File) {
-        val documentBuilder = DocumentBuilderFactory.newDefaultInstance().newDocumentBuilder()
+        val documentBuilder = DocumentBuilderFactory.newInstance().newDocumentBuilder()
         val document = documentBuilder.parse(xml)
         val activityList = document.getElementsByTagName("application")
 
@@ -72,7 +72,7 @@ object XMLUtil {
     }
 
     fun getPackageName(xml: File) : String?{
-        val documentBuilder = DocumentBuilderFactory.newDefaultInstance().newDocumentBuilder()
+        val documentBuilder = DocumentBuilderFactory.newInstance().newDocumentBuilder()
         val document = documentBuilder.parse(xml)
         val manifestList = document.getElementsByTagName("manifest")
 
